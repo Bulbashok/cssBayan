@@ -8,16 +8,25 @@
 body{
     background-color: aqua;
 }
-
-.accordion{
-    margin: 60px auto;
-    width: 600px;
+.container{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.page-title{
+    margin: 20px;
 }
 
-.accordion li{
+.accordion{
+    margin: 20px auto;
+    width: 75%;
+}
+
+.slide{
     list-style: none;
+    cursor: pointer;
     width: 100%;    
-    margin: 20px;
+    margin: 20px auto;
     padding: 10px;
     border-radius: 8px;
     background: #eee;
@@ -25,18 +34,26 @@ body{
                 -6px -6px 10px -1px rgba(0, 0, 0, 0.15);
 }
 
+.slide:hover{
+    background: #7df166;
+}
+
 .accordion li label{
     display: flex;
     align-items: center;
     padding: 10px;
-    font-size: 28px;
+    font-size: 1.5rem;
     cursor: pointer;
+}
+img{
+    width: 100%;
 }
 
 label::before{
     content: "+";
     margin-right: 10px;
-    font-size: 28px;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 input[type="radio"]{
@@ -51,10 +68,9 @@ input[type="radio"]{
 }
 
 .accordion input[type="radio"]:checked + label + .content{
-    max-height: 500px;
-    padding: 10px 10px 20px;
+    max-height: 75vh;
 }
 
 .accordion input[type="radio"]:checked + label::before{
     content: "-";
-}
+} 
