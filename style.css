@@ -7,17 +7,27 @@
 
 body{
     background-color: aqua;
+    font-size: 1.5rem;
+}
+.container{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.page-title{
+    margin: 20px;
 }
 
 .accordion{
-    margin: 60px auto;
-    width: 600px;
+    margin: 20px auto;
+    width: 75%;
 }
 
-.accordion li{
+.slide{
     list-style: none;
+    cursor: pointer;
     width: 100%;    
-    margin: 20px;
+    margin: 20px auto;
     padding: 10px;
     border-radius: 8px;
     background: #eee;
@@ -25,18 +35,25 @@ body{
                 -6px -6px 10px -1px rgba(0, 0, 0, 0.15);
 }
 
+.slide:hover{
+    background: #7df166;
+}
+
 .accordion li label{
     display: flex;
     align-items: center;
     padding: 10px;
-    font-size: 28px;
     cursor: pointer;
+}
+img{
+    width: 100%;
 }
 
 label::before{
     content: "+";
     margin-right: 10px;
-    font-size: 28px;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 input[type="radio"]{
@@ -51,10 +68,36 @@ input[type="radio"]{
 }
 
 .accordion input[type="radio"]:checked + label + .content{
-    max-height: 500px;
-    padding: 10px 10px 20px;
+    max-height: 75vh;
+}
+.accordion input[type="radio"]:checked{
+    background-color: #7df166;
+}
+
+.accordion input[type="radio"]:checked,:hover + label + .content{
+    max-height: 75vh;
 }
 
 .accordion input[type="radio"]:checked + label::before{
     content: "-";
-}
+} 
+
+
+@media (max-width: 1024px) {
+    body{
+        font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    body{
+        font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    body{
+        font-size: 0.75rem;
+    }
+  }
+
